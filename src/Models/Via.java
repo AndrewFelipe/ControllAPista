@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Via {
 	
+	private String testes = "";
 	private String nome = "";
 
 	protected ArrayList<Semaforo> semaforos;
