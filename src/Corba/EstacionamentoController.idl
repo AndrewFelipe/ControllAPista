@@ -1,0 +1,12 @@
+module generatedCorba {
+
+  interface EstacionamentoController {
+
+    boolean reservaEstacionamento(in string placa, out boolean ret);
+    boolean removeReserva(in string placa, out boolean ret);
+
+    boolean isLotado(out boolean ret);
+
+  };
+
+};
