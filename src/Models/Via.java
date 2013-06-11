@@ -3,6 +3,8 @@ package Models;
 import java.util.ArrayList;
 
 public class Via {
+	
+	private String nome = "";
 
 	protected ArrayList<Semaforo> semaforos;
 	protected String rua;
