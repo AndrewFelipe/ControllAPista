@@ -7,20 +7,20 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name = "getVeiculoResponse", namespace = "http://webService/")
+@XmlRootElement(name = "CanOpenResponse", namespace = "http://webService/")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getVeiculoResponse", namespace = "http://webService/")
-public class GetVeiculoResponse {
+@XmlType(name = "CanOpenResponse", namespace = "http://webService/")
+public class CanOpenResponse {
 
     @XmlElement(name = "return", namespace = "")
-    private Models.Veiculo _return;
+    private boolean _return;
 
     /**
      * 
      * @return
-     *     returns Veiculo
+     *     returns boolean
      */
-    public Models.Veiculo getReturn() {
+    public boolean isReturn() {
         return this._return;
     }
 
@@ -29,7 +29,7 @@ public class GetVeiculoResponse {
      * @param _return
      *     the value for the _return property
      */
-    public void setReturn(Models.Veiculo _return) {
+    public void setReturn(boolean _return) {
         this._return = _return;
     }
 

@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for getVeiculo complex type.
+ * <p>Java class for connectSemaforo complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="getVeiculo">
+ * &lt;complexType name="connectSemaforo">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://webService/}semaforo" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,22 +26,22 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getVeiculo", propOrder = {
+@XmlType(name = "connectSemaforo", propOrder = {
     "arg0"
 })
-public class GetVeiculo {
+public class ConnectSemaforo {
 
-    protected String arg0;
+    protected Semaforo arg0;
 
     /**
      * Gets the value of the arg0 property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Semaforo }
      *     
      */
-    public String getArg0() {
+    public Semaforo getArg0() {
         return arg0;
     }
 
@@ -50,10 +50,10 @@ public class GetVeiculo {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Semaforo }
      *     
      */
-    public void setArg0(String value) {
+    public void setArg0(Semaforo value) {
         this.arg0 = value;
     }
 

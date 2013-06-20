@@ -7,18 +7,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name = "getVeiculo", namespace = "http://webService/")
+@XmlRootElement(name = "CanOpen", namespace = "http://webService/")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getVeiculo", namespace = "http://webService/", propOrder = {
-    "arg0",
-    "arg1"
-})
-public class GetVeiculo {
+@XmlType(name = "CanOpen", namespace = "http://webService/")
+public class CanOpen {
 
     @XmlElement(name = "arg0", namespace = "")
     private String arg0;
-    @XmlElement(name = "arg1", namespace = "")
-    private Models.Veiculo arg1;
 
     /**
      * 
@@ -36,24 +31,6 @@ public class GetVeiculo {
      */
     public void setArg0(String arg0) {
         this.arg0 = arg0;
-    }
-
-    /**
-     * 
-     * @return
-     *     returns Veiculo
-     */
-    public Models.Veiculo getArg1() {
-        return this.arg1;
-    }
-
-    /**
-     * 
-     * @param arg1
-     *     the value for the arg1 property
-     */
-    public void setArg1(Models.Veiculo arg1) {
-        this.arg1 = arg1;
     }
 
 }

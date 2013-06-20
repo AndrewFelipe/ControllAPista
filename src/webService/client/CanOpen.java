@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for getVeiculo complex type.
+ * <p>Java class for CanOpen complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="getVeiculo">
+ * &lt;complexType name="CanOpen">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -26,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getVeiculo", propOrder = {
+@XmlType(name = "CanOpen", propOrder = {
     "arg0"
 })
-public class GetVeiculo {
+public class CanOpen {
 
     protected String arg0;
 

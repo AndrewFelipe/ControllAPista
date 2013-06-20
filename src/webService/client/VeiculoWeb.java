@@ -26,7 +26,6 @@ public interface VeiculoWeb {
 
     /**
      * 
-     * @param arg1
      * @param arg0
      * @return
      *     returns webService.client.Veiculo
@@ -38,8 +37,18 @@ public interface VeiculoWeb {
     @Action(input = "http://webService/VeiculoWeb/getVeiculoRequest", output = "http://webService/VeiculoWeb/getVeiculoResponse")
     public Veiculo getVeiculo(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        Veiculo arg1);
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "setVeiculo", targetNamespace = "http://webService/", className = "webService.client.SetVeiculo")
+    @ResponseWrapper(localName = "setVeiculoResponse", targetNamespace = "http://webService/", className = "webService.client.SetVeiculoResponse")
+    @Action(input = "http://webService/VeiculoWeb/setVeiculoRequest", output = "http://webService/VeiculoWeb/setVeiculoResponse")
+    public void setVeiculo(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Veiculo arg0);
 
 }

@@ -5,6 +5,10 @@ public class Veiculo {
 	private String modelo;
 	private String marca;
 	
+	public Veiculo(){
+		
+	}
+
 	public String getPlaca() {
 		return placa;
 	}

@@ -7,6 +7,10 @@ public class Estacionamento {
 	private int lotacao = 0;
 	private ArrayList carroList = new ArrayList<Veiculo>();
 	
+	public Estacionamento(){
+		
+	}
+	
 	public Estacionamento(int id, int lotacao){
 		this.id=id;
 		this.lotacao = lotacao;

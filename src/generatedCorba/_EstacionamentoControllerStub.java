@@ -11,7 +11,8 @@ package generatedCorba;
 public class _EstacionamentoControllerStub extends org.omg.CORBA.portable.ObjectImpl implements generatedCorba.EstacionamentoController
 {
 
-  public boolean reservaEstacionamento (String placa, org.omg.CORBA.BooleanHolder ret)
+  @Override
+public boolean reservaEstacionamento (String placa, org.omg.CORBA.BooleanHolder ret)
   {
             org.omg.CORBA.portable.InputStream $in = null;
             try {
@@ -32,7 +33,8 @@ public class _EstacionamentoControllerStub extends org.omg.CORBA.portable.Object
             }
   } // reservaEstacionamento
 
-  public boolean removeReserva (String placa, org.omg.CORBA.BooleanHolder ret)
+  @Override
+public boolean removeReserva (String placa, org.omg.CORBA.BooleanHolder ret)
   {
             org.omg.CORBA.portable.InputStream $in = null;
             try {
@@ -53,7 +55,8 @@ public class _EstacionamentoControllerStub extends org.omg.CORBA.portable.Object
             }
   } // removeReserva
 
-  public boolean isLotado (org.omg.CORBA.BooleanHolder ret)
+  @Override
+public boolean isLotado (org.omg.CORBA.BooleanHolder ret)
   {
             org.omg.CORBA.portable.InputStream $in = null;
             try {
@@ -77,9 +80,10 @@ public class _EstacionamentoControllerStub extends org.omg.CORBA.portable.Object
   private static String[] __ids = {
     "IDL:generatedCorba/EstacionamentoController:1.0"};
 
-  public String[] _ids ()
+  @Override
+public String[] _ids ()
   {
-    return (String[])__ids.clone ();
+    return __ids.clone ();
   }
 
   private void readObject (java.io.ObjectInputStream s) throws java.io.IOException

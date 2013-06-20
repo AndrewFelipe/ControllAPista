@@ -47,7 +47,7 @@ abstract public class EstacionamentoControllerHelper
 
   public static void write (org.omg.CORBA.portable.OutputStream ostream, generatedCorba.EstacionamentoController value)
   {
-    ostream.write_Object ((org.omg.CORBA.Object) value);
+    ostream.write_Object (value);
   }
 
   public static generatedCorba.EstacionamentoController narrow (org.omg.CORBA.Object obj)

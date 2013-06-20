@@ -20,17 +20,20 @@ public final class EstacionamentoControllerHolder implements org.omg.CORBA.porta
     value = initialValue;
   }
 
-  public void _read (org.omg.CORBA.portable.InputStream i)
+  @Override
+public void _read (org.omg.CORBA.portable.InputStream i)
   {
     value = generatedCorba.EstacionamentoControllerHelper.read (i);
   }
 
-  public void _write (org.omg.CORBA.portable.OutputStream o)
+  @Override
+public void _write (org.omg.CORBA.portable.OutputStream o)
   {
     generatedCorba.EstacionamentoControllerHelper.write (o, value);
   }
 
-  public org.omg.CORBA.TypeCode _type ()
+  @Override
+public org.omg.CORBA.TypeCode _type ()
   {
     return generatedCorba.EstacionamentoControllerHelper.type ();
   }

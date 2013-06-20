@@ -24,7 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _SetVeiculoResponse_QNAME = new QName("http://webService/", "setVeiculoResponse");
     private final static QName _GetVeiculo_QNAME = new QName("http://webService/", "getVeiculo");
+    private final static QName _SetVeiculo_QNAME = new QName("http://webService/", "setVeiculo");
     private final static QName _GetVeiculoResponse_QNAME = new QName("http://webService/", "getVeiculoResponse");
 
     /**
@@ -32,6 +34,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link SetVeiculoResponse }
+     * 
+     */
+    public SetVeiculoResponse createSetVeiculoResponse() {
+        return new SetVeiculoResponse();
     }
 
     /**
@@ -51,11 +61,28 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SetVeiculo }
+     * 
+     */
+    public SetVeiculo createSetVeiculo() {
+        return new SetVeiculo();
+    }
+
+    /**
      * Create an instance of {@link Veiculo }
      * 
      */
     public Veiculo createVeiculo() {
         return new Veiculo();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetVeiculoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webService/", name = "setVeiculoResponse")
+    public JAXBElement<SetVeiculoResponse> createSetVeiculoResponse(SetVeiculoResponse value) {
+        return new JAXBElement<SetVeiculoResponse>(_SetVeiculoResponse_QNAME, SetVeiculoResponse.class, null, value);
     }
 
     /**
@@ -65,6 +92,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://webService/", name = "getVeiculo")
     public JAXBElement<GetVeiculo> createGetVeiculo(GetVeiculo value) {
         return new JAXBElement<GetVeiculo>(_GetVeiculo_QNAME, GetVeiculo.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetVeiculo }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webService/", name = "setVeiculo")
+    public JAXBElement<SetVeiculo> createSetVeiculo(SetVeiculo value) {
+        return new JAXBElement<SetVeiculo>(_SetVeiculo_QNAME, SetVeiculo.class, null, value);
     }
 
     /**

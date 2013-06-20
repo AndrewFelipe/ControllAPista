@@ -3,7 +3,6 @@ package Models;
 import java.util.ArrayList;
 
 public class Via {
-	
 
 	protected ArrayList<Semaforo> semaforos;
 	protected String rua;
@@ -31,5 +30,9 @@ public class Via {
 
 	public String getRua() {
 		return rua;
+	}
+	
+	public ArrayList<Semaforo> getSemaforos(){
+		return this.semaforos;
 	}
 }

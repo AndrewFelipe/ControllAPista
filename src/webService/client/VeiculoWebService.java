@@ -43,7 +43,7 @@ public class VeiculoWebService
     }
 
     public VeiculoWebService(WebServiceFeature... features) {
-        super(__getWsdlLocation(), VEICULOWEBSERVICE_QNAME);
+        super(__getWsdlLocation(), VEICULOWEBSERVICE_QNAME, features);
     }
 
     public VeiculoWebService(URL wsdlLocation) {
@@ -51,7 +51,7 @@ public class VeiculoWebService
     }
 
     public VeiculoWebService(URL wsdlLocation, WebServiceFeature... features) {
-        super(wsdlLocation, VEICULOWEBSERVICE_QNAME);
+        super(wsdlLocation, VEICULOWEBSERVICE_QNAME, features);
     }
 
     public VeiculoWebService(URL wsdlLocation, QName serviceName) {
@@ -59,7 +59,7 @@ public class VeiculoWebService
     }
 
     public VeiculoWebService(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
-        super(wsdlLocation, serviceName);
+        super(wsdlLocation, serviceName, features);
     }
 
     /**

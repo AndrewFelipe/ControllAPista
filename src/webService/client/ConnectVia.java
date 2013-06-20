@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for getVeiculo complex type.
+ * <p>Java class for connectVia complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="getVeiculo">
+ * &lt;complexType name="connectVia">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://webService/}via" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,22 +26,22 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getVeiculo", propOrder = {
+@XmlType(name = "connectVia", propOrder = {
     "arg0"
 })
-public class GetVeiculo {
+public class ConnectVia {
 
-    protected String arg0;
+    protected Via arg0;
 
     /**
      * Gets the value of the arg0 property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Via }
      *     
      */
-    public String getArg0() {
+    public Via getArg0() {
         return arg0;
     }
 
@@ -50,10 +50,10 @@ public class GetVeiculo {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Via }
      *     
      */
-    public void setArg0(String value) {
+    public void setArg0(Via value) {
         this.arg0 = value;
     }
 
