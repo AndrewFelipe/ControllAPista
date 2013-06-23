@@ -1,8 +1,6 @@
 
 package webService.client;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -55,6 +53,7 @@ public interface TransitoWeb {
 
     /**
      * 
+     * @param arg1
      * @param arg0
      */
     @WebMethod
@@ -63,18 +62,8 @@ public interface TransitoWeb {
     @Action(input = "http://webService/TransitoWeb/connectSemaforoRequest", output = "http://webService/TransitoWeb/connectSemaforoResponse")
     public void connectSemaforo(
         @WebParam(name = "arg0", targetNamespace = "")
-        Semaforo arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<webService.client.Veiculo>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getSortedVeiculos", targetNamespace = "http://webService/", className = "webService.client.GetSortedVeiculos")
-    @ResponseWrapper(localName = "getSortedVeiculosResponse", targetNamespace = "http://webService/", className = "webService.client.GetSortedVeiculosResponse")
-    @Action(input = "http://webService/TransitoWeb/getSortedVeiculosRequest", output = "http://webService/TransitoWeb/getSortedVeiculosResponse")
-    public ArrayList<Models.Veiculo> getSortedVeiculos();
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
 
 }

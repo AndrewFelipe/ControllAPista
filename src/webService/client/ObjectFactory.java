@@ -24,10 +24,12 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _SetVeiculoResponse_QNAME = new QName("http://webService/", "setVeiculoResponse");
-    private final static QName _GetVeiculo_QNAME = new QName("http://webService/", "getVeiculo");
-    private final static QName _SetVeiculo_QNAME = new QName("http://webService/", "setVeiculo");
-    private final static QName _GetVeiculoResponse_QNAME = new QName("http://webService/", "getVeiculoResponse");
+    private final static QName _CanOpen_QNAME = new QName("http://webService/", "CanOpen");
+    private final static QName _ConnectSemaforo_QNAME = new QName("http://webService/", "connectSemaforo");
+    private final static QName _ConnectSemaforoResponse_QNAME = new QName("http://webService/", "connectSemaforoResponse");
+    private final static QName _ConnectViaResponse_QNAME = new QName("http://webService/", "connectViaResponse");
+    private final static QName _CanOpenResponse_QNAME = new QName("http://webService/", "CanOpenResponse");
+    private final static QName _ConnectVia_QNAME = new QName("http://webService/", "connectVia");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: webService.client
@@ -37,79 +39,113 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SetVeiculoResponse }
+     * Create an instance of {@link CanOpen }
      * 
      */
-    public SetVeiculoResponse createSetVeiculoResponse() {
-        return new SetVeiculoResponse();
+    public CanOpen createCanOpen() {
+        return new CanOpen();
     }
 
     /**
-     * Create an instance of {@link GetVeiculo }
+     * Create an instance of {@link ConnectSemaforoResponse }
      * 
      */
-    public GetVeiculo createGetVeiculo() {
-        return new GetVeiculo();
+    public ConnectSemaforoResponse createConnectSemaforoResponse() {
+        return new ConnectSemaforoResponse();
     }
 
     /**
-     * Create an instance of {@link GetVeiculoResponse }
+     * Create an instance of {@link ConnectSemaforo }
      * 
      */
-    public GetVeiculoResponse createGetVeiculoResponse() {
-        return new GetVeiculoResponse();
+    public ConnectSemaforo createConnectSemaforo() {
+        return new ConnectSemaforo();
     }
 
     /**
-     * Create an instance of {@link SetVeiculo }
+     * Create an instance of {@link ConnectVia }
      * 
      */
-    public SetVeiculo createSetVeiculo() {
-        return new SetVeiculo();
+    public ConnectVia createConnectVia() {
+        return new ConnectVia();
     }
 
     /**
-     * Create an instance of {@link Veiculo }
+     * Create an instance of {@link CanOpenResponse }
      * 
      */
-    public Veiculo createVeiculo() {
-        return new Veiculo();
+    public CanOpenResponse createCanOpenResponse() {
+        return new CanOpenResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetVeiculoResponse }{@code >}}
+     * Create an instance of {@link ConnectViaResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://webService/", name = "setVeiculoResponse")
-    public JAXBElement<SetVeiculoResponse> createSetVeiculoResponse(SetVeiculoResponse value) {
-        return new JAXBElement<SetVeiculoResponse>(_SetVeiculoResponse_QNAME, SetVeiculoResponse.class, null, value);
+    public ConnectViaResponse createConnectViaResponse() {
+        return new ConnectViaResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetVeiculo }{@code >}}
+     * Create an instance of {@link Via }
      * 
      */
-    @XmlElementDecl(namespace = "http://webService/", name = "getVeiculo")
-    public JAXBElement<GetVeiculo> createGetVeiculo(GetVeiculo value) {
-        return new JAXBElement<GetVeiculo>(_GetVeiculo_QNAME, GetVeiculo.class, null, value);
+    public Via createVia() {
+        return new Via();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetVeiculo }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CanOpen }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webService/", name = "setVeiculo")
-    public JAXBElement<SetVeiculo> createSetVeiculo(SetVeiculo value) {
-        return new JAXBElement<SetVeiculo>(_SetVeiculo_QNAME, SetVeiculo.class, null, value);
+    @XmlElementDecl(namespace = "http://webService/", name = "CanOpen")
+    public JAXBElement<CanOpen> createCanOpen(CanOpen value) {
+        return new JAXBElement<CanOpen>(_CanOpen_QNAME, CanOpen.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetVeiculoResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConnectSemaforo }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webService/", name = "getVeiculoResponse")
-    public JAXBElement<GetVeiculoResponse> createGetVeiculoResponse(GetVeiculoResponse value) {
-        return new JAXBElement<GetVeiculoResponse>(_GetVeiculoResponse_QNAME, GetVeiculoResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://webService/", name = "connectSemaforo")
+    public JAXBElement<ConnectSemaforo> createConnectSemaforo(ConnectSemaforo value) {
+        return new JAXBElement<ConnectSemaforo>(_ConnectSemaforo_QNAME, ConnectSemaforo.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConnectSemaforoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webService/", name = "connectSemaforoResponse")
+    public JAXBElement<ConnectSemaforoResponse> createConnectSemaforoResponse(ConnectSemaforoResponse value) {
+        return new JAXBElement<ConnectSemaforoResponse>(_ConnectSemaforoResponse_QNAME, ConnectSemaforoResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConnectViaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webService/", name = "connectViaResponse")
+    public JAXBElement<ConnectViaResponse> createConnectViaResponse(ConnectViaResponse value) {
+        return new JAXBElement<ConnectViaResponse>(_ConnectViaResponse_QNAME, ConnectViaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CanOpenResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webService/", name = "CanOpenResponse")
+    public JAXBElement<CanOpenResponse> createCanOpenResponse(CanOpenResponse value) {
+        return new JAXBElement<CanOpenResponse>(_CanOpenResponse_QNAME, CanOpenResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConnectVia }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webService/", name = "connectVia")
+    public JAXBElement<ConnectVia> createConnectVia(ConnectVia value) {
+        return new JAXBElement<ConnectVia>(_ConnectVia_QNAME, ConnectVia.class, null, value);
     }
 
 }

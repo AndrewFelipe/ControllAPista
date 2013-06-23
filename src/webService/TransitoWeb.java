@@ -1,6 +1,7 @@
 package webService;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -13,17 +14,15 @@ import Models.Via;
 @WebService
 public class TransitoWeb {
 
-	private ArrayList<Via> _vias;
-	private webService.client.VeiculoWeb veiculoWeb;
+	private HashMap<String, Via> _vias;
 	
 	public TransitoWeb(){
-		_vias = new ArrayList<Via>();
-		this.veiculoWeb = new webService.client.VeiculoWebService().getVeiculoWebPort();
+		_vias = new HashMap<String, Via>();
 	}
 	
 	@WebMethod
 	public void connectVia(Via rua){
-		_vias.add(rua);
+		_vias.put(rua.getRua(), rua);
 	}
 	
 	/*
@@ -31,28 +30,35 @@ public class TransitoWeb {
 	 */
 	@WebMethod
 	public boolean CanOpen(String ruaNome){
-		for (int i=0; i < _vias.size(); i++) {		
-			if(ruaNome == _vias.get(i).getRua()){
-				for (int j=0; j < _vias.get(i).getSemaforos().size(); j++){
-					if(_vias.get(i).getSemaforos().get(j).isOpen())
-						return false;
-				}
+		System.out.println(ruaNome + " quer abrir sinal");
+		if(_vias.containsKey(ruaNome)){
+			for (int j=0; j < _vias.get(ruaNome).getSemaforos().size(); j++){
+				if(_vias.get(ruaNome).getSemaforos().get(j).isOpen())
+					return false;
 			}
 		}
 		
 		return true;
 	}
 	
-	
 	@WebMethod
-	public void connectSemaforo(Semaforo sem){
-		for (int i=0; i < _vias.size(); i++) {		
-			if(sem.getRua() == _vias.get(i).getRua()){
-				_vias.get(i).addSemaforo(sem);
+	public void connectSemaforo(String rua, int ID){
+		Semaforo sem = new Semaforo();
+		sem.setRua(rua);
+		sem.setId(ID);
+		
+			if(_vias.containsKey(rua)){
+				_vias.get(rua).addSemaforo(sem);
+				return;
 			}
-		}
+		
+		Via newVia = new Via();
+		newVia.setRua(rua);
+		newVia.addSemaforo(sem);
+		this.connectVia(newVia);
 	}
 	
+	/*
 	@WebMethod
 	public ArrayList<Veiculo> getSortedVeiculos(){
 		ArrayList<Veiculo> veiculosSorted = new ArrayList<Veiculo>();
@@ -70,7 +76,7 @@ public class TransitoWeb {
 	
 	@WebMethod(exclude=true)
 	private webService.client.VeiculoWeb getVeiculoWeb(){
-		return this.veiculoWeb;
-	}
+		return Utils.getVeiculoWeb();
+	}*/
 	
 }
