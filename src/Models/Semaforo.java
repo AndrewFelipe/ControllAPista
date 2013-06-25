@@ -11,11 +11,21 @@ public class Semaforo {
 	
 	protected static int ID = 0;
 	protected String RUA;
+
+	private int[] veiculosHora = new int[23];
 	
 	protected webService.client.TransitoWeb wsTransito;
 	
 	public Semaforo(){
 		this.ID++;
+	}
+
+	public void somaVeiculosHora(int hora){
+		veiculosHora[hora]++;
+	}
+	
+	public int[] getVeiculosHora(){
+		return this.veiculosHora;
 	}
 	
 	public long getCurrentTime(){
