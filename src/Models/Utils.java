@@ -2,10 +2,6 @@ package Models;
 
 import java.util.Random;
 
-import webService.client.TransitoWeb;
-import webService.client.TransitoWebService;
-import webService.client.VeiculoWeb;
-
 public class Utils {
 
 	public	static int getRandomNumber(int faixa, int randomLengh){
@@ -15,11 +11,12 @@ public class Utils {
 		return i;
 	}
 	
-	public static webService.client.TransitoWeb getTransitoWeb(){
-		return new webService.client.TransitoWebService().getTransitoWebPort();
+	public static webService.cliente.TransitoWeb getTransitoWeb(){
+		System.out.println("instanciando transitoWeb");
+		return new webService.cliente.TransitoWebService().getTransitoWebPort();
 	}
 
-	public static webService.client.VeiculoWeb getVeiculoWeb() {
-		return new webService.client.VeiculoWebService().getVeiculoWebPort();
+	public static webService.cliente.VeiculoWeb getVeiculoWeb() {
+		return new webService.cliente.VeiculoWebService().getVeiculoWebPort();
 	}
 }

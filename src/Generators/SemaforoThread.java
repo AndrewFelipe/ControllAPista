@@ -3,6 +3,7 @@ package Generators;
 import javax.swing.table.DefaultTableModel;
 
 import Models.Semaforo;
+import Models.Utils;
 import Views.TelaPrincipal;
 
 public class SemaforoThread extends Thread {
@@ -29,6 +30,7 @@ public class SemaforoThread extends Thread {
 	
 	@Override
 	public void run() {
+		Utils.getTransitoWeb().connectSemaforo(this.sem.getRua(), this.ID);
 		javax.swing.JTable table = tela.getTableSemaforos();
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		

@@ -7,6 +7,8 @@ package Views;
 import java.awt.List;
 import java.util.ArrayList;
 
+import webService.cliente.Via;
+
 import Generators.SemaforoThread;
 import Models.Utils;
 import Models.Veiculo;
@@ -21,6 +23,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
      * Creates new form TelaPrincipal
      */
     public TelaPrincipal() {
+    	Via rua = new Via();
+    	rua.setRua("TESTE");
+    	
+    	Utils.getTransitoWeb().connectVia(rua);
         initComponents();
     }
 

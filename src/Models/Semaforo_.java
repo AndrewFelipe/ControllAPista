@@ -1,8 +1,5 @@
 package Models;
-
-import java.util.ArrayList;
-import java.util.List;
-
+/*
 public class Semaforo {
 	protected Boolean isOpen = false;
 	
@@ -11,21 +8,11 @@ public class Semaforo {
 	
 	protected static int ID = 0;
 	protected String RUA;
-
-	private int[] veiculosHora = new int[23];
 	
 	protected webService.cliente.TransitoWeb wsTransito;
 	
 	public Semaforo(){
 		this.ID++;
-	}
-
-	public void somaVeiculosHora(int hora){
-		veiculosHora[hora]++;
-	}
-	
-	public int[] getVeiculosHora(){
-		return this.veiculosHora;
 	}
 	
 	public long getCurrentTime(){
@@ -33,7 +20,7 @@ public class Semaforo {
 	}
 	
 	public void verifyToOpen() {
-		if((this.getLastTimeUpdated() - this.getCurrentTime())  > tempoAbertura){
+		if((this.getLastTimeUpdated() - this.getCurrentTime())  < tempoAbertura){
 			if (this.getTransito().canOpen(this.RUA)){ 
 				System.out.println("opening");
 				this.open();
@@ -42,8 +29,8 @@ public class Semaforo {
 	}
 
 	public void verifyToClose() {
-		if((this.getLastTimeUpdated() - this.getCurrentTime())  > tempoAbertura){
-			System.out.println("closing");
+		if((this.getLastTimeUpdated() - this.getCurrentTime())  < tempoAbertura){
+			System.out.println("fechando");
 			this.close();
 		}
 	}
@@ -80,11 +67,12 @@ public class Semaforo {
 		this.RUA = rua;
 	}
 	
-	/*public List<webService.client.Veiculo> getVeiculos(){
+	public List<webService.client.Veiculo> getVeiculos(){
 		return this.getTransito().getSortedVeiculos();
-	}*/
+	}
 
 	public void setId(int id) {
 		this.ID = id;
 	}
 }
+*/

@@ -1,6 +1,7 @@
 package webService;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 import javax.jws.WebMethod;
@@ -8,7 +9,6 @@ import javax.jws.WebService;
 
 import Models.Semaforo;
 import Models.Utils;
-import Models.Veiculo;
 import Models.Via;
 
 @WebService
@@ -30,8 +30,8 @@ public class TransitoWeb {
 	 */
 	@WebMethod
 	public boolean CanOpen(String ruaNome){
-		System.out.println(ruaNome + " quer abrir sinal");
 		if(_vias.containsKey(ruaNome)){
+			System.out.println("Contem a rua: " + ruaNome);
 			for (int j=0; j < _vias.get(ruaNome).getSemaforos().size(); j++){
 				if(_vias.get(ruaNome).getSemaforos().get(j).isOpen())
 					return false;
@@ -47,21 +47,22 @@ public class TransitoWeb {
 		sem.setRua(rua);
 		sem.setId(ID);
 		
-			if(_vias.containsKey(rua)){
-				_vias.get(rua).addSemaforo(sem);
-				return;
-			}
+		if(_vias.containsKey(rua)){
+			_vias.get(rua).addSemaforo(sem);
+			System.out.println("Adicionado via tal");
+			return;
+		}
 		
 		Via newVia = new Via();
 		newVia.setRua(rua);
 		newVia.addSemaforo(sem);
-		this.connectVia(newVia);
+		this._vias.put(newVia.getRua(), newVia);
 	}
 	
 	/*
 	@WebMethod
-	public ArrayList<Veiculo> getSortedVeiculos(){
-		ArrayList<Veiculo> veiculosSorted = new ArrayList<Veiculo>();
+	public ArrayList<Models.Veiculo> getSortedVeiculos(){
+		ArrayList<Models.Veiculo> veiculosSorted = new ArrayList<Models.Veiculo>();
 		
 		// random de 4 a 10
 		for(int i = 0; i < Utils.getRandomNumber(10, 6); i++){
@@ -72,11 +73,18 @@ public class TransitoWeb {
 		
 		return veiculosSorted;
 	}
+	*/
+	
+	@WebMethod
+	public Collection<Via> getVias(){
+		Collection<Via> vias = this._vias.values();
+		return vias;
+	}
 	
 	
 	@WebMethod(exclude=true)
-	private webService.client.VeiculoWeb getVeiculoWeb(){
+	private webService.cliente.VeiculoWeb getVeiculoWeb(){
 		return Utils.getVeiculoWeb();
-	}*/
+	}
 	
 }
