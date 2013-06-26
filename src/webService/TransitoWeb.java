@@ -32,13 +32,24 @@ public class TransitoWeb {
 	public boolean CanOpen(String ruaNome){
 		if(_vias.containsKey(ruaNome)){
 			System.out.println("Contem a rua: " + ruaNome);
-			for (int j=0; j < _vias.get(ruaNome).getSemaforos().size(); j++){
-				if(_vias.get(ruaNome).getSemaforos().get(j).isOpen())
+			for (Semaforo sem : _vias.get(ruaNome).getSemaforos()){
+				if(sem.isOpen())
 					return false;
 			}
 		}
 		
 		return true;
+	}
+	
+	@WebMethod
+	public Collection<Semaforo> getSemaforosFromRua(String rua){
+		System.out.println("Get Semaforos da rua: " + rua);
+		if (_vias.containsKey(rua)){
+			System.out.println("Contem via");
+			return _vias.get(rua).getSemaforos();
+		}
+		
+		return null;
 	}
 	
 	@WebMethod
@@ -49,7 +60,6 @@ public class TransitoWeb {
 		
 		if(_vias.containsKey(rua)){
 			_vias.get(rua).addSemaforo(sem);
-			System.out.println("Adicionado via tal");
 			return;
 		}
 		

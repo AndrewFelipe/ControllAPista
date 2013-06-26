@@ -1,5 +1,7 @@
 package Generators;
 
+import java.awt.List;
+
 import javax.swing.table.DefaultTableModel;
 
 import Models.Semaforo;
@@ -13,12 +15,19 @@ public class SemaforoThread extends Thread {
 	private Object[] row;
 	
 	private int ID = 0;
+	private static String[] ruasNome = {
+			"RUA BAHIA", 
+			"RUA AMAZONA", 
+			"RUA MEXICO", 
+			"RUA PORTO", 
+			"ANT. DA VEIGA"
+		};
 	
 	public SemaforoThread(TelaPrincipal tela){
 		this.tela = tela;
 		this.ID = tela.getTableSemaforos().getModel().getRowCount();
 		this.sem = new Semaforo();
-		this.sem.setRua("TESTE");
+		this.sem.setRua(ruasNome[Utils.getRandomNumber(4, 4)]);
 	}
 	
 	private Object[] getRow(){
@@ -48,7 +57,6 @@ public class SemaforoThread extends Thread {
 				}
 				
 				this.getRow()[1] = sem.isOpen();
-				System.out.println("OI: " + sem.isOpen());
 				
 				//model.insertRow(this.ID, this.getRow());
 				model.setValueAt(this.getRow()[1], this.ID, 1);

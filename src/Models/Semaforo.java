@@ -33,7 +33,7 @@ public class Semaforo {
 	}
 	
 	public void verifyToOpen() {
-		if((this.getLastTimeUpdated() - this.getCurrentTime())  > tempoAbertura){
+		if((this.getLastTimeUpdated() - this.getCurrentTime())  < tempoAbertura){
 			if (this.getTransito().canOpen(this.RUA)){ 
 				System.out.println("opening");
 				this.open();
@@ -42,7 +42,7 @@ public class Semaforo {
 	}
 
 	public void verifyToClose() {
-		if((this.getLastTimeUpdated() - this.getCurrentTime())  > tempoAbertura){
+		if((this.getLastTimeUpdated() - this.getCurrentTime())  < tempoAbertura){
 			System.out.println("closing");
 			this.close();
 		}

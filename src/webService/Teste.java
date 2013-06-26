@@ -1,7 +1,6 @@
 package webService;
 
 import java.util.Collection;
-
 import webService.cliente.Via;
 
 public class Teste {
