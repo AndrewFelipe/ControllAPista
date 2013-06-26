@@ -2,6 +2,7 @@ package rmi;
 
 import java.rmi.Naming;
 import java.util.ArrayList;
+import java.util.List;
 
 import Models.Via;
 
@@ -16,7 +17,7 @@ public class ControllerRMIClient {
 			
 			ControllerRMI control = (ControllerRMI)Naming.lookup("//" + args[0] + "/ControllerRMI");
 			
-			ArrayList<Via> listVias = control.ViasMonitoradas();
+			List<webService.cliente.Via> listVias = control.ViasMonitoradas();
 			int[] qtdVeiculosHora = new int[23];
 			int[][] VelocMediaMaximaHora = new int[24][2];
 			

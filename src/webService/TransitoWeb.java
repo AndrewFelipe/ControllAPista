@@ -32,8 +32,8 @@ public class TransitoWeb {
 	public boolean CanOpen(String ruaNome){
 		if(_vias.containsKey(ruaNome)){
 			System.out.println("Contem a rua: " + ruaNome);
-			for (int j=0; j < _vias.get(ruaNome).getSemaforos().size(); j++){
-				if(_vias.get(ruaNome).getSemaforos().get(j).isOpen())
+			for (Semaforo sem : _vias.get(ruaNome).getSemaforos()){
+				if(sem.isOpen())
 					return false;
 			}
 		}
