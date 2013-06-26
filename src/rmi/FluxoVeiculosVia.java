@@ -19,7 +19,7 @@ public class FluxoVeiculosVia {
 		
 		for (int i = 0; i < via.getSemaforos().size(); i++){
 			for (int j = 0; j < 24; j++){
-				//totalVeiculosHora[j] = totalVeiculosHora[j] + via.getSemaforos().get(i).getVeiculosHora()[j];
+				totalVeiculosHora[j] = totalVeiculosHora[j] + via.getSemaforos().get(i).getVeiculosHora()[j];
 			}
 		}
 	}

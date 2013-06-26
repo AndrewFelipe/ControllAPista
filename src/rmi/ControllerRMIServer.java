@@ -2,10 +2,12 @@ package rmi;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import Models.Utils;
 import Models.Veiculo;
+import Models.Via;
 
 public class ControllerRMIServer extends UnicastRemoteObject implements ControllerRMI {
 	
@@ -14,30 +16,31 @@ public class ControllerRMIServer extends UnicastRemoteObject implements Controll
 	}
 
 	@Override
-	public List<webService.cliente.Via> ViasMonitoradas() throws RemoteException {
+	public Collection<Via> ViasMonitoradas() throws RemoteException {
 		return Utils.getTransitoWeb().getVias();
 	}
 
 	@Override
-	public int[] veiculosHora(webService.cliente.Via via) throws RemoteException {
+	public int[] veiculosHora(Via via) throws RemoteException {
 		
 		int[] totalVeiculosHora = new int[24];
 		
-			/*for (Semaforo sem : via.){
+		for (int i = 0; i < via.getSemaforos().size(); i++){
+			for (int j = 0; j < 24; j++){
 				totalVeiculosHora[j] = totalVeiculosHora[j] + via.getSemaforos().get(i).getVeiculosHora()[j];
-			}*/
-			
+			}
+		}
 		return totalVeiculosHora;
 	}
 
 	@Override
-	public int[][] velocMediaMaximaHora(webService.cliente.Via via) throws RemoteException {
+	public int[][] velocMediaMaximaHora(Via via) throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean excedePesoMaximo(webService.cliente.Via via, Veiculo veiculo)
+	public boolean excedePesoMaximo(Via via, Veiculo veiculo)
 			throws RemoteException {
 		// TODO Auto-generated method stub
 		return false;
