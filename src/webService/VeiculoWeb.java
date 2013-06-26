@@ -35,8 +35,8 @@ public class VeiculoWeb {
 		int marcaLenght = _marca.length;
 		int modeloLenght = _modelos.length;
 		
-		car.setMarca(this._marca[Utils.getRandomNumber(marcaLenght, marcaLenght)]);
-		car.setModelo(this._modelos[Utils.getRandomNumber(modeloLenght, modeloLenght)]);
+		car.setMarca(this._marca[Utils.getRandomNumber(marcaLenght-1, marcaLenght-1)]);
+		car.setModelo(this._modelos[Utils.getRandomNumber(modeloLenght-1, modeloLenght-1)]);
 		car.setPlaca(placa);
 		
 		this._veiculos.put(placa, car);
@@ -45,6 +45,10 @@ public class VeiculoWeb {
 	
 	@WebMethod
 	public void setVeiculo(Veiculo carro){
+		System.out.println("Adicionao no VeiculoWEB: "
+				+ carro.getMarca()
+				+ " | " + carro.getModelo()
+				+ " | " + carro.getPlaca());
 		this._veiculos.put(carro.getPlaca(), carro);
 	}
 }

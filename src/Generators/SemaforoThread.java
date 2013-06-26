@@ -1,7 +1,5 @@
 package Generators;
 
-import java.awt.List;
-
 import javax.swing.table.DefaultTableModel;
 
 import Models.Semaforo;

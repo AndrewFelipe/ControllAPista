@@ -1,10 +1,11 @@
 package Models;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Via {
 
-	protected ArrayList<Semaforo> semaforos;
+	protected Collection<Semaforo> semaforos;
 	protected String rua;
 	
 	public Via(){
@@ -32,7 +33,7 @@ public class Via {
 		return rua;
 	}
 	
-	public ArrayList<Semaforo> getSemaforos(){
+	public Collection<Semaforo> getSemaforos(){
 		return this.semaforos;
 	}
 }
