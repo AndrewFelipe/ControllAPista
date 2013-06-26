@@ -1,6 +1,8 @@
 
 package webService.cliente;
 
+import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
@@ -29,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "via", propOrder = {
     "rua"
 })
-public class Via {
+public class Via implements Serializable {
 
     protected String rua;
 

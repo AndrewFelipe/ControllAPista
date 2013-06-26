@@ -1,9 +1,12 @@
 package rmi;
 
+import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Collection;
 import java.util.List;
+
+import javax.jws.WebService;
 
 import Models.Semaforo;
 import Models.Utils;
@@ -24,7 +27,7 @@ public class ControllerRMIServer extends UnicastRemoteObject implements Controll
 	public int[] veiculosHora(webService.cliente.Via via) throws RemoteException {
 		
 		int[] totalVeiculosHora = new int[24];
-		Collection<Semaforo> semaforos = Utils.getTransitoWeb().getSemaforosFromRua(via.getRua());
+		List<Semaforo> semaforos = Utils.getTransitoWeb().getSemaforosFromRua(via.getRua());
 		for (Semaforo sem : semaforos){
 			for(int j = 0; j < 24; j++)
 				totalVeiculosHora[j] = totalVeiculosHora[j] + sem.getVeiculosHora()[j];
@@ -45,5 +48,15 @@ public class ControllerRMIServer extends UnicastRemoteObject implements Controll
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	public static void main(String[] args) {
+		   try {
+			  System.out.println("Servidor RMI Controller Iniciado.");
+		      ControllerRMIServer obj = new ControllerRMIServer();
+		      Naming.rebind("//localhost:1099/ControllerRMI", obj);
+		   } catch (Exception ex) {
+			   System.out.println("Falha no Servidor RMI:" + ex.getMessage());
+		   } 
+		}
 
 }
